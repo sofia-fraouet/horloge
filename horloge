@@ -1,0 +1,48 @@
+import time
+
+heure = (15, 25, 50)
+regler_alarme = [15, 25, 53]
+
+heurelist = list(heure)
+
+def alarme(regler_alarme):
+    if heurelist == regler_alarme:
+        print("C'est l'heure!")
+
+
+def afficher_heure(heure):
+
+    while True:
+        time.sleep(1)
+        heure[2] += 1
+        if heure[2] == 60:
+            heure[1] += 1
+            heure[2] = 0
+
+        if heure[1] == 60:
+            heure[0] += 1
+            heure[1] = 0
+        
+        if heure[0] == 24:
+            heure[0] = 0
+
+
+        print(heure[0], heure[1], heure[2])
+        alarme(regler_alarme)
+
+afficher_heure(heurelist)
+
+
+
+
+
+
+# def temps(affichage) : 
+
+#heure [2] = 50. 50 sont des secondes 
+#heure [1] = 25. 25 sont des minutes 
+#heure [0] = 15. 15 sont des heures
+
+
+
+
